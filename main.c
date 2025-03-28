@@ -454,16 +454,16 @@ int simple_shell_help(char **argv) {
     static char help_team_information[] =
         "OPERATING SYSTEMS PROJECT 01 - A SIMPLE SHELL\n"
         "λ Team member λ\n"
-        "18120061 \t\tNhut-Nam Le\n"
-        "18120185 \t\tDang-Khoa Doan\n"
+        "???\t\tAyuub Hagi\n"
+        "169032891\t\tClinton Osawe\n"
         "λ Description λ\n"
-        "Khoa and Nam's Shell is a simple UNIX command interpreter that replicates functionalities of the simple shell (sh).\n"
-        "This program was written entirely in C as assignment for project 01 in Operating Systems Course CQ2018-21, host by lecturers Dung Tran Trung & lab teacher Le Giang Thanh."
+        "Ayuub and Clinton's Shell is a simple UNIX command interpreter that replicates functionalities of the simple shell (sh).\n"
+        "This program was written entirely in C as a research-based project for Operating Systems, showcasing core system-level programming concepts.\n"
         "\n"
-        "\nUsage help command. Type help [command name] for help/ more information.\n"
+        "Usage help command. Type help [command name] for help/more information.\n"
         "Options for [command name]:\n"
         "cd <directory name>\t\t\tDescription: Change the current working directory.\n"
-        "exit              \t\t\tDescription: Exit Khoa & Nam'shell, buyback Linux Shell.\n";
+        "exit              \t\t\tDescription: Exit Ayuub & Clinton's shell, returning to the Linux shell.\n";
     static char help_cd_command[] = "HELP CD COMMAND\n";
     static char help_exit_command[] = "HELP EXIT COMMAND\n";
 
