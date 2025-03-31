@@ -9,6 +9,7 @@
 #include <fcntl.h> // open(), creat(), close()
 #include <time.h>
 #include <errno.h>
+#include "ai_handler.h"
 // ######################################################################################
 
 // ############################## DEFINE SECTION ########################################
@@ -646,11 +647,24 @@ int main(void) {
         // If the command is history recall "!!", execute history command
         if (strcmp(args[0], "!!") == 0) {
             res = simple_shell_history(history, redir_argv);
+        } else if (strcmp(args[0], "ai") == 0) {
+        // Join all args after "ai" into a prompt
+            char prompt_buffer[MAX_LINE_LENGTH] = "";
+            for (int i = 1; args[i] != NULL; i++) {
+                strcat(prompt_buffer, args[i]);
+                strcat(prompt_buffer, " ");
+            }
+
+            char ai_response[MAX_LINE_LENGTH * 2];
+            get_ai_response(prompt_buffer, ai_response, sizeof(ai_response));
+            printf("\n🤖 AI says:\n%s\n", ai_response);
+            continue; // Go to next loop iteration
         } else {
             // Save the current command to history and execute it
             set_prev_command(history, t_line);
             exec_command(args, redir_argv, wait, res);
         }
+
         // Reset result for next iteration
         res = 0;
     }
